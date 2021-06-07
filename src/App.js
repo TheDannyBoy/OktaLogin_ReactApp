@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router";
+import "./App.css";
+import RouterWithOktaSecurity from './components/RouterWithOktaSecurity';
+import AuthHandlerComponent from './components/AuthHandlerComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <RouterWithOktaSecurity>
+            <Route component={AuthHandlerComponent} />
+        </RouterWithOktaSecurity>
+    );
+};
 
 export default App;
